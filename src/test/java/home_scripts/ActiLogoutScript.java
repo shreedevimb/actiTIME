@@ -1,18 +1,18 @@
-package pom_scripts;
+package home_scripts;
 
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
 import pom_pages.actitimeEnterTimetrack_page;
 import pom_pages.actitimeLogin_page;
 
+public class ActiLogoutScript {
 
-
-public class actiLogoutScript {
-	public static void main(String[] args) {
-		System.setProperty("webdriver.chrome.driver","./drivers/chromedriver.exe");
+	@Test
+	public void actiLogout() {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
@@ -24,5 +24,4 @@ public class actiLogoutScript {
 		actitimeEnterTimetrack_page ob2 = new actitimeEnterTimetrack_page(driver);
 		ob2.clickLogout();
 	}
-
 }

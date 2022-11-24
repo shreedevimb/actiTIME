@@ -1,19 +1,20 @@
-package pom_scripts;
+package adduser_scripts;
 
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
 import pom_pages.actitimeEnterTimetrack_page;
 import pom_pages.actitimeLogin_page;
 import pom_pages.actitimeUserList_page;
 import pom_pages.addUser_page;
 
+public class AddUserScript {
 
-public class addUserScript2 {
-	public static void main(String[] args) throws InterruptedException {
-		System.setProperty("webdriver.chrome.driver","./drivers/chromedriver.exe");
+	@Test
+	public void addUser() throws InterruptedException {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
@@ -33,5 +34,4 @@ public class addUserScript2 {
 		addUser_page ob4 = new addUser_page(driver);
 		ob4.createUser("Prathap", "Ram", "prathaphr33@gmail.com");
 	}
-
 }
